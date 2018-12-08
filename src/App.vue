@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
@@ -11,6 +10,9 @@ export default {
 }
 </script>
 
+<style scoped lang="less">
+  @import '~vux/src/styles/1px.less';
+</style>
 <style scoped lang="stylus">
   @import '~@/assets/css/common.styl'
 </style>
