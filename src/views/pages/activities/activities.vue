@@ -1,11 +1,123 @@
 <template>
-
+  <div id="activities">
+    <template
+      v-for="(item,i) in list"
+    >
+      <form-preview
+        :header-label="item[0].label"
+        :body-items="list[i]"
+        :footer-buttons="buttons"
+        name="demo">
+      
+      </form-preview>
+    </template>
+    
+    <!--<form-preview-->
+    <!--:header-label="$t('上海双十一线下快闪')"-->
+    <!--:body-items="list"-->
+    <!--:footer-buttons="buttons"-->
+    <!--name="demo"></form-preview>-->
+    <!--<form-preview-->
+    <!--:header-label="$t('上海双十一线下快闪')"-->
+    <!--:body-items="list"-->
+    <!--:footer-buttons="buttons"-->
+    <!--name="demo"></form-preview>-->
+  </div>
 </template>
-
+<i18n>
+  付款金额:
+  en: Total
+  标题标题:
+  en: Item Title
+  商品:
+  en: Product
+  很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字:
+  en: Long Long Long Long Long Long Long Long Long Long Long Long Content
+  名字名字名字:
+  en: Name Name
+  电动打蛋机:
+  en: Item title
+  辅助操作:
+  en: Info
+  操作:
+  en: Action
+  点击事件:
+  en: Click Event
+  跳转到首页:
+  en: Homepage
+</i18n>
 <script>
-	export default {
-		name: "activities"
-	}
+  import {FormPreview} from 'vux'
+  
+  export default {
+    name: "activities",
+    components: {
+      FormPreview
+    },
+    data() {
+      return {
+        list: [
+          [
+            {
+              label: '商品',
+              value: '电动打蛋机'
+            },
+            {
+              label: '标题标题',
+              value: '名字名字名字'
+            },
+            {
+              label: '标题标题',
+              value: '很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字'
+            } ]
+          ,
+          [
+            {
+              label: '商品1',
+              value: '电动打蛋机1'
+            },
+            {
+              label: '标题标题1',
+              value: '名字名字名字1'
+            },
+            {
+              label: '标题标题1',
+              value: '很长很长'
+            }
+          ],
+          [
+            {
+              label: '商品2',
+              value: '电动打蛋机2'
+            },
+            {
+              label: '标题标题2',
+              value: '名字名字名字2'
+            },
+            {
+              label: '标题标题2',
+              value: '很长很长2'
+            }
+          ],
+        ],
+        // buttons1: [{
+        //   style: 'default',
+        //   text: '辅助操作'
+        // }, {
+        //   style: 'primary',
+        //   text: this.$t('跳转到首页'),
+        //   link: '/'
+        // }],
+        buttons: [ {
+          style: 'primary',
+          text: this.$t('查看详情'),
+          onButtonClick: (name) => {
+            alert(`clicking ${name}`)
+          }
+        } ]
+      }
+    }
+  }
 </script>
 
 <style scoped lang="stylus">

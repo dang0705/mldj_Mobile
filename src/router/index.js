@@ -13,10 +13,20 @@ export default new Router({
       component: pages,
       children: [
         {
-          path: '/pages',
-          name: 'pages',
-          component: resolve => require([ '@/views/pages/pages' ], resolve)
-        }
+          path: '/activities',
+          name: 'activities',
+          component: resolve => require([ '@/views/pages/activities/activities' ], resolve)
+        },
+        {
+          path: '/message',
+          name: 'message',
+          component: resolve => require([ '@/views/pages/message/message' ], resolve)
+        },
+        {
+          path: '/my',
+          name: 'my',
+          component: resolve => require([ '@/views/pages/my/my' ], resolve)
+        },
       ]
     }
   ]
