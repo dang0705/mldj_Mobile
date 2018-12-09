@@ -8,20 +8,9 @@
         :body-items="list[i]"
         :footer-buttons="buttons"
         name="demo">
-      
       </form-preview>
     </template>
-    
-    <!--<form-preview-->
-    <!--:header-label="$t('上海双十一线下快闪')"-->
-    <!--:body-items="list"-->
-    <!--:footer-buttons="buttons"-->
-    <!--name="demo"></form-preview>-->
-    <!--<form-preview-->
-    <!--:header-label="$t('上海双十一线下快闪')"-->
-    <!--:body-items="list"-->
-    <!--:footer-buttons="buttons"-->
-    <!--name="demo"></form-preview>-->
+    <divider>我是有底线的</divider>
   </div>
 </template>
 <i18n>
@@ -48,11 +37,12 @@
 </i18n>
 <script>
   import {FormPreview} from 'vux'
-  
+  import { Divider } from 'vux'
   export default {
     name: "activities",
     components: {
-      FormPreview
+      FormPreview,
+      Divider
     },
     data() {
       return {
