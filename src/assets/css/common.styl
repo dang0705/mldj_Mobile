@@ -1,4 +1,20 @@
 $color = #ff005c
+#app
+  background #eee
+  height: 100%
+#app>>>.vux-header
+  background-color $color
+  position: fixed
+  width: 100%
+  top: 0
+  z-index 500
+  .vux-header-left
+    .vux-header-back
+      color #fff
+    .left-arrow::before
+      border-color #fff
+#app>>>.routerView
+  margin-top: 46px
 #app>>>.weui-tabbar__item.vux-tabbar-simple
   height: 80px
   line-height: 80px
@@ -7,5 +23,10 @@ $color = #ff005c
 
 #app>>>.weui-tabbar
   background-color $color
+  position: fixed
 
+
+#app>>>#divider
+  height: 100px
+  background #eee
 

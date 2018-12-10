@@ -16,13 +16,13 @@ export default new Router({
           path: '/activities',
           name: 'activities',
           component: resolve => require([ '@/views/pages/activities/activities' ], resolve),
-          children: [
-            {
-              path: '/component',
-              name: 'activityDetail',
-              component: resolve => require([ '@/views/pages/activities/component/activityDetail' ], resolve)
-            }
-          ]
+
+        },
+        // 活动详情
+        {
+          path: '/details/:id',
+          name: 'details',
+          component: resolve => require([ '@/views/pages/activities/component/activityDetails' ], resolve)
         },
         {
           path: '/message',
