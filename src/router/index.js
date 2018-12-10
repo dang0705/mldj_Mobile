@@ -15,7 +15,14 @@ export default new Router({
         {
           path: '/activities',
           name: 'activities',
-          component: resolve => require([ '@/views/pages/activities/activities' ], resolve)
+          component: resolve => require([ '@/views/pages/activities/activities' ], resolve),
+          children: [
+            {
+              path: '/component',
+              name: 'activityDetail',
+              component: resolve => require([ '@/views/pages/activities/component/activityDetail' ], resolve)
+            }
+          ]
         },
         {
           path: '/message',

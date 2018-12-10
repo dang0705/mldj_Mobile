@@ -3,17 +3,22 @@
     <template
       v-for="(item,i) in list"
     >
-      <form-preview
-        :header-label="item[0].label"
-        :body-items="list[i]"
-        :footer-buttons="buttons"
-        name="demo">
-      </form-preview>
+      <!--<form-preview-->
+      <!--:header-label="item[0].label"-->
+      <!--:body-items="list[i]"-->
+      <!--:footer-buttons="buttons"-->
+      <!--name="demo">-->
+      <!--</form-preview>-->
+      <card
+        :header="{title:item.label}"
+        :footer="{title: '查看更多',link:'/component/activityDetail.vue'}">
+        <p slot="content" class="card-padding">{{ item.value }}</p>
+      </card>
     </template>
     <divider>我是有底线的</divider>
   </div>
 </template>
-<i18n>
+<!--<i18n>
   付款金额:
   en: Total
   标题标题:
@@ -34,77 +39,71 @@
   en: Click Event
   跳转到首页:
   en: Homepage
-</i18n>
+</i18n>-->
 <script>
   import {FormPreview} from 'vux'
-  import { Divider } from 'vux'
+  import {Divider, Card} from 'vux'
+  
   export default {
     name: "activities",
     components: {
-      FormPreview,
-      Divider
+      // FormPreview,
+      Divider,
+      Card
     },
     data() {
       return {
         list: [
-          [
-            {
-              label: '商品',
-              value: '电动打蛋机'
-            },
-            {
-              label: '标题标题',
-              value: '名字名字名字'
-            },
-            {
-              label: '标题标题',
-              value: '很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字'
-            } ]
-          ,
-          [
-            {
-              label: '商品1',
-              value: '电动打蛋机1'
-            },
-            {
-              label: '标题标题1',
-              value: '名字名字名字1'
-            },
-            {
-              label: '标题标题1',
-              value: '很长很长'
-            }
-          ],
-          [
-            {
-              label: '商品2',
-              value: '电动打蛋机2'
-            },
-            {
-              label: '标题标题2',
-              value: '名字名字名字2'
-            },
-            {
-              label: '标题标题2',
-              value: '很长很长2'
-            }
-          ],
-        ],
-        // buttons1: [{
-        //   style: 'default',
-        //   text: '辅助操作'
-        // }, {
-        //   style: 'primary',
-        //   text: this.$t('跳转到首页'),
-        //   link: '/'
-        // }],
-        buttons: [ {
-          style: 'primary',
-          text: this.$t('查看详情'),
-          onButtonClick: (name) => {
-            alert(`clicking ${name}`)
+          {
+            label: '商品',
+            value: '电动打蛋机'
+          },
+          {
+            label: '标题标题',
+            value: '名字名字名字'
+          },
+          {
+            label: '标题标题',
+            value: '很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字'
           }
-        } ]
+          ,
+          // [
+          //   {
+          //     label: '商品1',
+          //     value: '电动打蛋机1'
+          //   },
+          //   {
+          //     label: '标题标题1',
+          //     value: '名字名字名字1'
+          //   },
+          //   {
+          //     label: '标题标题1',
+          //     value: '很长很长'
+          //   }
+          // ],
+          // [
+          //   {
+          //     label: '商品2',
+          //     value: '电动打蛋机2'
+          //   },
+          //   {
+          //     label: '标题标题2',
+          //     value: '名字名字名字2'
+          //   },
+          //   {
+          //     label: '标题标题2',
+          //     value: '很长很长2'
+          //   }
+          // ],
+        ],
+
+        // buttons: [ {
+        //   style: 'primary',
+        //   text: this.$t('查看详情'),
+        //   onButtonClick: (name) => {
+        //     alert(`clicking ${name}`)
+        //   }
+        // } ]
       }
     }
   }

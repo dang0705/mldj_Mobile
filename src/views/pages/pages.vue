@@ -21,14 +21,16 @@
 <script>
   import {
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    XHeader
   } from 'vux'
   
   export default {
     name: "page",
     components: {
       Tabbar,
-      TabbarItem
+      TabbarItem,
+      XHeader
     },
     data(){
       return{
