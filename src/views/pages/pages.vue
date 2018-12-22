@@ -8,6 +8,7 @@
     <router-view class="routerView"></router-view>
     <tabbar
       @on-index-change="tabChange"
+      v-if="isTabShow"
     >
       <tabbar-item selected link="/activities">
         <img slot="icon" :src="iconUrl+'/activity.png'" alt="">
@@ -42,6 +43,7 @@
     data() {
       return {
         iconUrl: 'static/icon',
+        isTabShow:false,
         activeIconUrl: 'static/icon_active',
         isShowBack: false,
         pageTitle: '活动列表'

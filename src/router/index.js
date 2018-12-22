@@ -6,9 +6,16 @@ import pages from '@/views/pages/pages'
 Vue.use(Router)
 
 export default new Router({
+  base: '/HomeWeb_H5',
+
   routes: [
     {
-      path: '/',
+      path:'/',
+      name:'login',
+      component:login
+    },
+    {
+      path: '/pages',
       name: 'pages',
       component: pages,
       children: [
